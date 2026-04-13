@@ -1,128 +1,148 @@
+import Link from "next/link";
+import { LineReveal } from "@/components/site/LineReveal";
+import { MarqueeRow } from "@/components/site/MarqueeRow";
+import { NewsletterSignup } from "@/components/site/NewsletterSignup";
+import { SectionShell } from "@/components/site/SectionShell";
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-stone-100 text-neutral-900">
+    <main className="min-h-screen bg-[var(--brand-cream)] text-[var(--brand-ink)]">
       <div className="mx-auto w-full max-w-[1500px] px-6 md:px-10 lg:px-14">
-        {/* HERO */}
-        <section className="grid gap-12 py-24 md:py-32 lg:grid-cols-12 lg:gap-10 lg:py-40">
+        <section className="section-shell grid gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-7">
-            <p className="mb-8 text-xs uppercase tracking-[0.28em] text-neutral-500">
-              FIOS Studio
-            </p>
-            <h1 className="max-w-4xl text-5xl leading-[1.05] tracking-tight md:text-7xl lg:text-8xl">
-              A cinematic brand world shaped through editorial rhythm and quiet precision.
+            <p className="kicker mb-8">FIOS Studio</p>
+            <h1 className="editorial-display max-w-4xl text-5xl leading-[1.05] text-[var(--brand-ink)] md:text-7xl lg:text-8xl">
+              A modern editorial hybrid for warm, cinematic brand worlds.
             </h1>
-            <p className="mt-10 max-w-xl text-base leading-relaxed text-neutral-600 md:text-lg">
-              Placeholder copy for positioning. This space can hold a warm, confident introduction that opens into the visual narrative.
-            </p>
+            <LineReveal
+              className="mt-10 max-w-xl space-y-2 text-base text-[var(--brand-deep)]/80 md:text-lg"
+              lines={[
+                "Placeholder narrative introducing your lens and creative philosophy.",
+                "Built to feel tactile like print, but fluid like a contemporary studio.",
+              ]}
+            />
+            <div className="mt-10">
+              <Link href="#selected-work" className="utility-mono text-[0.64rem] text-[var(--brand-ink)]/75">
+                Scroll
+              </Link>
+            </div>
           </div>
-          <div className="lg:col-span-5 lg:pt-16">
-            <div className="aspect-[4/5] w-full bg-stone-300" />
+          <div className="image-reveal lg:col-span-5">
+            <div className="aspect-[4/5] w-full border border-[var(--brand-ink)]/20 bg-[var(--brand-blush)]" />
           </div>
         </section>
 
-        {/* SELECTED WORK */}
-        <section className="py-20 md:py-28 lg:py-36">
+        <MarqueeRow text={["Intentional", "Editorial", "Warm", "Weighted", "Studio-Led", "Cinematic"]} />
+
+        <SectionShell id="selected-work">
           <div className="mb-12 flex items-end justify-between gap-6">
-            <h2 className="text-3xl leading-tight tracking-tight md:text-5xl">Selected Work</h2>
-            <p className="hidden text-xs uppercase tracking-[0.2em] text-neutral-500 md:block">
-              Featured stories
-            </p>
+            <h2 className="editorial-display text-3xl leading-tight md:text-5xl">Selected Work</h2>
+            <p className="kicker hidden md:block">Featured stories</p>
           </div>
           <div className="grid gap-6 md:grid-cols-12 md:gap-8 lg:gap-10">
             <article className="md:col-span-7">
-              <div className="aspect-[5/6] w-full bg-stone-300" />
-              <div className="mt-5 flex items-center justify-between text-sm text-neutral-600">
+              <div className="image-reveal">
+                <div className="aspect-[5/6] w-full bg-[var(--brand-blush)]" />
+              </div>
+              <div className="mt-5 flex items-center justify-between text-sm text-[var(--brand-ink)]/80">
                 <p>Campaign Narrative</p>
                 <p>Placeholder</p>
               </div>
             </article>
             <article className="md:col-span-5 md:pt-16">
-              <div className="aspect-[4/5] w-full bg-stone-400/80" />
-              <div className="mt-5 flex items-center justify-between text-sm text-neutral-600">
+              <div className="image-reveal">
+                <div className="aspect-[4/5] w-full bg-[var(--brand-gold)]" />
+              </div>
+              <div className="mt-5 flex items-center justify-between text-sm text-[var(--brand-ink)]/80">
                 <p>Identity Study</p>
                 <p>Placeholder</p>
               </div>
             </article>
             <article className="md:col-span-4 md:-mt-10">
-              <div className="aspect-[3/4] w-full bg-stone-300/90" />
-              <div className="mt-5 flex items-center justify-between text-sm text-neutral-600">
+              <div className="image-reveal">
+                <div className="aspect-[3/4] w-full bg-[var(--brand-olive)]/70" />
+              </div>
+              <div className="mt-5 flex items-center justify-between text-sm text-[var(--brand-ink)]/80">
                 <p>Editorial Build</p>
                 <p>Placeholder</p>
               </div>
             </article>
             <article className="md:col-span-8">
-              <div className="aspect-[16/9] w-full bg-stone-200" />
-              <div className="mt-5 flex items-center justify-between text-sm text-neutral-600">
+              <div className="image-reveal">
+                <div className="aspect-[16/9] w-full bg-[var(--brand-deep)]/15" />
+              </div>
+              <div className="mt-5 flex items-center justify-between text-sm text-[var(--brand-ink)]/80">
                 <p>Launch Sequence</p>
                 <p>Placeholder</p>
               </div>
             </article>
           </div>
-        </section>
+        </SectionShell>
 
-        {/* SERVICES */}
-        <section className="py-20 md:py-24 lg:py-28">
+        <SectionShell>
           <div className="max-w-4xl">
-            <p className="text-xs uppercase tracking-[0.22em] text-neutral-500">Services</p>
-            <div className="mt-8 divide-y divide-neutral-300/60">
+            <p className="kicker">Services</p>
+            <div className="mt-8 divide-y divide-[var(--brand-deep)]/20">
               <div className="flex items-center justify-between py-5 text-lg md:text-xl">
                 <span>Brand Strategy</span>
-                <span className="text-sm uppercase tracking-[0.12em] text-neutral-500">Placeholder</span>
+                <span className="utility-mono text-[0.62rem] text-[var(--brand-olive)]">Reveal</span>
               </div>
               <div className="flex items-center justify-between py-5 text-lg md:text-xl">
                 <span>Creative Direction</span>
-                <span className="text-sm uppercase tracking-[0.12em] text-neutral-500">Placeholder</span>
+                <span className="utility-mono text-[0.62rem] text-[var(--brand-olive)]">Reveal</span>
               </div>
               <div className="flex items-center justify-between py-5 text-lg md:text-xl">
                 <span>Editorial Systems</span>
-                <span className="text-sm uppercase tracking-[0.12em] text-neutral-500">Placeholder</span>
+                <span className="utility-mono text-[0.62rem] text-[var(--brand-olive)]">Reveal</span>
               </div>
             </div>
           </div>
-        </section>
+        </SectionShell>
 
-        {/* MANIFESTO */}
-        <section className="py-24 md:py-32 lg:py-40">
-          <p className="mb-8 text-xs uppercase tracking-[0.22em] text-neutral-500">Manifesto</p>
-          <h2 className="max-w-5xl text-4xl leading-[1.18] tracking-tight md:text-6xl lg:text-7xl">
-            We build brand experiences that feel composed, human, and enduring, where every decision serves the story and every visual breathes with intent.
+        <SectionShell>
+          <p className="kicker mb-8">Manifesto</p>
+          <h2 className="editorial-display max-w-5xl text-4xl leading-[1.16] md:text-6xl lg:text-7xl">
+            We build experiences that feel composed and human, where every frame serves the story.
           </h2>
-          <p className="mt-10 max-w-2xl text-base leading-relaxed text-neutral-600 md:text-lg">
-            Placeholder supporting line for philosophy, values, and point of view.
+          <p className="mt-10 max-w-2xl text-base leading-relaxed text-[var(--brand-deep)]/80 md:text-lg">
+            Placeholder supporting statement for your philosophy and method.
           </p>
-        </section>
+        </SectionShell>
 
-        {/* JOURNAL */}
-        <section className="py-20 md:py-24 lg:py-28">
-          <h2 className="text-3xl tracking-tight md:text-5xl">Journal</h2>
+        <SectionShell>
+          <h2 className="editorial-display text-3xl md:text-5xl">Journal</h2>
           <div className="mt-12 max-w-3xl space-y-10">
-            <article className="border-b border-neutral-300/60 pb-8">
-              <p className="text-xs uppercase tracking-[0.2em] text-neutral-500">Strategy</p>
-              <h3 className="mt-3 text-2xl leading-tight md:text-3xl">How pace and contrast shape a premium homepage</h3>
+            <article className="border-b border-[var(--brand-ink)]/25 pb-8">
+              <p className="kicker">Strategy</p>
+              <h3 className="mt-3 text-2xl leading-tight md:text-3xl">
+                How pace and contrast shape a premium homepage
+              </h3>
             </article>
-            <article className="border-b border-neutral-300/60 pb-8">
-              <p className="text-xs uppercase tracking-[0.2em] text-neutral-500">Design</p>
-              <h3 className="mt-3 text-2xl leading-tight md:text-3xl">Placeholder editorial note on visual hierarchy and warmth</h3>
+            <article className="border-b border-[var(--brand-ink)]/25 pb-8">
+              <p className="kicker">Design</p>
+              <h3 className="mt-3 text-2xl leading-tight md:text-3xl">
+                Placeholder editorial note on visual hierarchy and warmth
+              </h3>
             </article>
           </div>
-        </section>
+        </SectionShell>
 
-        {/* NEWSLETTER */}
-        <section className="py-24 md:py-28 lg:py-32">
+        <SectionShell>
           <div className="max-w-2xl">
-            <p className="text-xs uppercase tracking-[0.22em] text-neutral-500">Newsletter</p>
-            <h2 className="mt-5 text-3xl leading-tight tracking-tight md:text-5xl">Subscribe for occasional perspective and studio notes.</h2>
-            <p className="mt-6 text-base leading-relaxed text-neutral-600 md:text-lg">
-              Placeholder copy for future integration.
+            <p className="kicker">Newsletter</p>
+            <h2 className="editorial-display mt-5 text-3xl leading-tight md:text-5xl">
+              Subscribe for occasional perspective and studio notes.
+            </h2>
+            <p className="mt-6 text-base leading-relaxed text-[var(--brand-deep)]/80 md:text-lg">
+              Placeholder copy for future Substack integration.
             </p>
-            <div className="mt-10 h-14 w-full max-w-xl bg-stone-200" />
+            <NewsletterSignup />
           </div>
-        </section>
+        </SectionShell>
 
-        {/* FOOTER */}
-        <footer className="flex items-center justify-between border-t border-neutral-300/70 py-10 text-sm text-neutral-500">
-          <p>© FIOS</p>
-          <p>Placeholder location</p>
+        <footer className="section-shell flex items-center justify-between py-10 text-sm text-[var(--brand-olive)]">
+          <p>© FIOS Studio</p>
+          <p className="utility-mono text-[0.62rem]">Editorial Hybrid</p>
         </footer>
       </div>
     </main>
