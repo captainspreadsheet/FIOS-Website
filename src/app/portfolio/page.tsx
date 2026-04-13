@@ -11,7 +11,7 @@ const projects = [
 export default function PortfolioPage() {
   return (
     <main className="min-h-screen">
-      <div className="mx-auto w-full max-w-[1500px] px-6 md:px-10 lg:px-14">
+      <div className="mx-auto w-full max-w-[var(--container-max)] px-5 md:px-8 lg:px-10">
         <SectionShell>
           <p className="kicker mb-6">Portfolio</p>
           <h1 className="editorial-display max-w-4xl text-4xl leading-tight md:text-6xl">
@@ -24,10 +24,10 @@ export default function PortfolioPage() {
                 href={`/portfolio/${project.slug}`}
                 className={`group ${index % 2 === 0 ? "md:col-span-7" : "md:col-span-5 md:pt-14"}`}
               >
-                <div className={`aspect-[4/5] w-full ${project.tone}`} />
+                <div className={`aspect-[4/5] w-full rounded-[16px] ${project.tone}`} />
                 <div className="mt-4 flex items-center justify-between">
                   <h2 className="text-2xl">{project.title}</h2>
-                  <span className="utility-mono text-[0.62rem] text-[var(--brand-olive)]">View</span>
+                  <span className="utility-mono text-[0.62rem] text-[var(--brand-ink)]/68">View</span>
                 </div>
               </Link>
             ))}

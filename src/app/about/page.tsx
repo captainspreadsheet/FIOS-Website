@@ -10,7 +10,7 @@ const timeline = [
 export default function AboutPage() {
   return (
     <main className="min-h-screen">
-      <div className="mx-auto w-full max-w-[1500px] px-6 md:px-10 lg:px-14">
+      <div className="mx-auto w-full max-w-[var(--container-max)] px-5 md:px-8 lg:px-10">
         <SectionShell className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5 lg:sticky lg:top-28 lg:self-start">
             <p className="kicker mb-6">About</p>
@@ -27,8 +27,8 @@ export default function AboutPage() {
               ]}
             />
             {timeline.map((item) => (
-              <div key={item.year} className="border-t border-[var(--brand-ink)]/20 pt-8">
-                <p className="utility-mono text-[0.62rem] text-[var(--brand-olive)]">{item.year}</p>
+              <div key={item.year} className="border-t border-[var(--border-subtle)] pt-8">
+                <p className="utility-mono text-[0.62rem] text-[var(--brand-ink)]/68">{item.year}</p>
                 <p className="mt-3 text-xl">{item.text}</p>
               </div>
             ))}

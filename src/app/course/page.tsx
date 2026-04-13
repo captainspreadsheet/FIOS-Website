@@ -10,7 +10,7 @@ const modules = [
 export default function CoursePage() {
   return (
     <main className="min-h-screen">
-      <div className="mx-auto w-full max-w-[1500px] px-6 md:px-10 lg:px-14">
+      <div className="mx-auto w-full max-w-[var(--container-max)] px-5 md:px-8 lg:px-10">
         <SectionShell className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5 lg:sticky lg:top-28 lg:self-start">
             <p className="kicker mb-6">Course</p>
@@ -24,8 +24,8 @@ export default function CoursePage() {
           <div className="lg:col-span-7">
             <div className="space-y-6">
               {modules.map((module) => (
-                <div key={module} className="border border-[var(--brand-ink)]/20 bg-[var(--brand-blush)]/30 p-6">
-                  <p className="utility-mono text-[0.62rem] text-[var(--brand-olive)]">Included</p>
+                <div key={module} className="rounded-[12px] border border-[var(--border-subtle)] bg-[var(--brand-cream)] p-6">
+                  <p className="utility-mono text-[0.62rem] text-[var(--brand-ink)]/65">Included</p>
                   <h2 className="mt-3 text-2xl">{module}</h2>
                 </div>
               ))}

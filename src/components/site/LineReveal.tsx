@@ -12,7 +12,7 @@ export function LineReveal({ lines, className = "" }: LineRevealProps) {
         <p
           key={`${line}-${index}`}
           className="line-reveal"
-          style={{ "--line-delay": `${index * 100}ms` } as CSSProperties}
+          style={{ "--line-delay": `${index * 120}ms` } as CSSProperties}
         >
           {line}
         </p>

@@ -1,15 +1,16 @@
 export function NewsletterSignup() {
   return (
-    <form className="mt-8 flex w-full max-w-xl overflow-hidden border border-[var(--brand-ink)]/25">
+    <form className="mt-8 flex w-full max-w-xl flex-col gap-2 sm:flex-row sm:items-end" aria-label="Newsletter signup">
+      <label htmlFor="newsletter-email" className="sr-only">
+        Email address
+      </label>
       <input
+        id="newsletter-email"
         type="email"
         placeholder="Your email"
-        className="h-14 flex-1 bg-[var(--brand-cream)] px-4 text-sm outline-none placeholder:text-[var(--brand-ink)]/50"
+        className="h-12 flex-1 rounded-[12px] border border-[var(--border-subtle)] bg-[var(--brand-cream)] px-4 text-sm placeholder:text-[var(--brand-ink)]/50"
       />
-      <button
-        type="button"
-        className="utility-mono h-14 bg-[var(--brand-deep)] px-6 text-[0.66rem] text-[var(--brand-cream)]"
-      >
+      <button type="button" className="pill-button utility-mono text-[0.66rem]">
         Subscribe
       </button>
     </form>

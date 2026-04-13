@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { LineReveal } from "@/components/site/LineReveal";
 import { MarqueeRow } from "@/components/site/MarqueeRow";
 import { NewsletterSignup } from "@/components/site/NewsletterSignup";
@@ -6,24 +7,30 @@ import { SectionShell } from "@/components/site/SectionShell";
 
 export default function Home() {
   const bannerLinks = [
-    { href: "#top", label: "Home" },
-    { href: "#about", label: "About" },
-    { href: "#services", label: "Services" },
-    { href: "#course", label: "Course" },
-    { href: "#portfolio", label: "Portfolio" },
-    { href: "#contact", label: "Contact" },
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/services", label: "Services" },
+    { href: "/course", label: "Course" },
+    { href: "/portfolio", label: "Portfolio" },
+    { href: "/contact", label: "Contact" },
     { href: "#blog", label: "Blog" },
   ];
 
   return (
     <main id="top" className="min-h-screen bg-[var(--brand-cream)] text-[var(--brand-ink)]">
-      <section className="relative min-h-[calc(100vh-65px)] overflow-hidden border-b border-[var(--brand-ink)]/15">
-        <div className="absolute inset-0 bg-[linear-gradient(140deg,var(--brand-deep),var(--brand-ink)_35%,var(--brand-gold)_95%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(230,196,188,0.22),transparent_52%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(239,238,234,0.18),transparent_50%)]" />
-        <div className="relative mx-auto flex min-h-[calc(100vh-65px)] w-full max-w-[1500px] flex-col justify-end px-6 py-14 md:px-10 md:py-16 lg:px-14 lg:py-20">
+      <section className="relative min-h-[calc(100vh-65px)] overflow-hidden border-b border-[var(--border-subtle)]">
+        <Image
+          src="/hero.png"
+          alt="Editorial hero"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[62%_center] sm:object-[58%_center] lg:object-[center_32%]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/28 to-black/18" />
+        <div className="relative mx-auto flex min-h-[calc(100vh-65px)] w-full max-w-[var(--container-max)] flex-col justify-end px-5 py-14 md:px-8 md:py-16 lg:px-10 lg:py-20">
           <p className="utility-mono text-[0.62rem] text-[var(--brand-cream)]/85">FIOS Studio</p>
-          <h1 className="editorial-display mt-5 max-w-4xl text-4xl leading-[1.04] text-[var(--brand-cream)] sm:text-5xl md:text-7xl lg:text-8xl">
+          <h1 className="editorial-display mt-5 max-w-4xl text-4xl leading-[1.06] text-[var(--brand-cream)] sm:text-5xl md:text-6xl lg:text-7xl">
             Design that tells your story and makes people feel something.
           </h1>
           <p className="mt-6 max-w-2xl text-sm text-[var(--brand-cream)]/85 sm:text-base md:text-lg">
@@ -39,9 +46,9 @@ export default function Home() {
 
       <section
         id="homepage-banner"
-        className="sticky top-[64px] z-30 border-b border-[var(--brand-ink)]/15 bg-[var(--brand-cream)]/95 backdrop-blur"
+        className="sticky top-[64px] z-30 border-b border-[var(--border-subtle)] bg-[var(--brand-cream)]/95 backdrop-blur"
       >
-        <div className="mx-auto flex w-full max-w-[1500px] flex-wrap items-center gap-x-4 gap-y-2 px-6 py-3 md:gap-x-6 md:px-10 md:py-4 lg:px-14">
+        <div className="mx-auto flex w-full max-w-[var(--container-max)] flex-wrap items-center gap-x-4 gap-y-2 px-5 py-3 md:gap-x-6 md:px-8 md:py-4 lg:px-10">
           {bannerLinks.map((linkItem) => (
             <Link
               key={linkItem.label}
@@ -54,7 +61,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="mx-auto w-full max-w-[1500px] px-6 md:px-10 lg:px-14">
+      <div className="mx-auto w-full max-w-[var(--container-max)] px-5 md:px-8 lg:px-10">
         <MarqueeRow text={["Intentional", "Editorial", "Warm", "Weighted", "Studio-Led", "Cinematic"]} />
 
         <SectionShell id="portfolio" className="pt-14 md:pt-20">
@@ -88,7 +95,7 @@ export default function Home() {
           </div>
           <Link
             href="/portfolio"
-            className="utility-mono mt-10 block w-full rounded-full border border-[var(--brand-deep)]/35 bg-[var(--brand-blush)] px-7 py-5 text-center text-[0.74rem] text-[var(--brand-deep)]"
+            className="pill-button utility-mono mt-10 flex w-full items-center justify-center text-center text-[0.7rem]"
           >
             View The Projects
           </Link>
@@ -99,43 +106,43 @@ export default function Home() {
             <h2 className="editorial-display text-4xl leading-tight text-[var(--brand-deep)] md:text-6xl">
               Our Signature Services
             </h2>
-            <p className="utility-mono max-w-[220px] text-[0.62rem] leading-relaxed text-[var(--brand-deep)]/80">
+            <p className="utility-mono max-w-[220px] text-[0.62rem] leading-relaxed text-[var(--brand-ink)]/72">
               A full suite of creative solutions to bring your brand to life.
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-3">
             <article className="relative mx-auto w-full max-w-[22rem] pt-16 md:pt-20">
-              <div className="absolute left-1/2 top-0 h-32 w-32 -translate-x-1/2 rounded-full border border-[var(--brand-ink)]/20 bg-[var(--brand-gold)] md:h-36 md:w-36" />
+              <div className="absolute left-1/2 top-0 h-32 w-32 -translate-x-1/2 rounded-full border border-[var(--border-subtle)] bg-[var(--brand-gold)] md:h-36 md:w-36" />
               <div className="rounded-t-[6rem] bg-[var(--brand-deep)] px-5 pb-7 pt-16 text-center text-[var(--brand-cream)] md:rounded-t-[7rem] md:px-6 md:pb-8 md:pt-20">
                 <h3 className="text-2xl leading-tight md:text-3xl">Social Strategy & Creation</h3>
                 <p className="mt-3 text-sm text-[var(--brand-cream)]/85 md:mt-4">
                   Placeholder copy for service summary and ideal client outcomes.
                 </p>
-                <button className="utility-mono mt-5 w-full rounded-full border border-[var(--brand-cream)]/60 bg-[var(--brand-blush)] px-6 py-3 text-[0.62rem] text-[var(--brand-deep)] md:mt-6 md:w-auto md:px-7 md:py-4 md:text-[0.64rem]">
+                <button className="pill-button utility-mono mt-5 w-full text-[0.62rem] md:mt-6 md:w-auto md:text-[0.64rem]">
                   Learn More
                 </button>
               </div>
             </article>
             <article className="relative mx-auto w-full max-w-[22rem] pt-16 md:pt-20">
-              <div className="absolute left-1/2 top-0 h-32 w-32 -translate-x-1/2 rounded-full border border-[var(--brand-ink)]/20 bg-[var(--brand-blush)] md:h-36 md:w-36" />
-              <div className="rounded-t-[6rem] border border-[var(--brand-deep)]/20 bg-[var(--brand-cream)] px-5 pb-7 pt-16 text-center md:rounded-t-[7rem] md:px-6 md:pb-8 md:pt-20">
+              <div className="absolute left-1/2 top-0 h-32 w-32 -translate-x-1/2 rounded-full border border-[var(--border-subtle)] bg-[var(--brand-blush)] md:h-36 md:w-36" />
+              <div className="rounded-t-[6rem] border border-[var(--border-subtle)] bg-[var(--brand-cream)] px-5 pb-7 pt-16 text-center md:rounded-t-[7rem] md:px-6 md:pb-8 md:pt-20">
                 <h3 className="text-2xl leading-tight text-[var(--brand-deep)] md:text-3xl">Brand Story & Strategy</h3>
                 <p className="mt-3 text-sm text-[var(--brand-deep)]/80 md:mt-4">
                   Placeholder copy for positioning work, messaging, and editorial voice.
                 </p>
-                <button className="utility-mono mt-5 w-full rounded-full border border-[var(--brand-deep)]/30 bg-[var(--brand-blush)] px-6 py-3 text-[0.62rem] text-[var(--brand-deep)] md:mt-6 md:w-auto md:px-7 md:py-4 md:text-[0.64rem]">
+                <button className="pill-button utility-mono mt-5 w-full text-[0.62rem] md:mt-6 md:w-auto md:text-[0.64rem]">
                   Learn More
                 </button>
               </div>
             </article>
             <article className="relative mx-auto w-full max-w-[22rem] pt-16 md:pt-20">
-              <div className="absolute left-1/2 top-0 h-32 w-32 -translate-x-1/2 rounded-full border border-[var(--brand-ink)]/20 bg-[var(--brand-olive)]/65 md:h-36 md:w-36" />
+              <div className="absolute left-1/2 top-0 h-32 w-32 -translate-x-1/2 rounded-full border border-[var(--border-subtle)] bg-[var(--brand-olive)]/65 md:h-36 md:w-36" />
               <div className="rounded-t-[6rem] bg-[var(--brand-deep)] px-5 pb-7 pt-16 text-center text-[var(--brand-cream)] md:rounded-t-[7rem] md:px-6 md:pb-8 md:pt-20">
                 <h3 className="text-2xl leading-tight md:text-3xl">Experience & Campaign Design</h3>
                 <p className="mt-3 text-sm text-[var(--brand-cream)]/85 md:mt-4">
                   Placeholder copy for launches, campaigns, and conversion-focused design.
                 </p>
-                <button className="utility-mono mt-5 w-full rounded-full border border-[var(--brand-cream)]/60 bg-[var(--brand-blush)] px-6 py-3 text-[0.62rem] text-[var(--brand-deep)] md:mt-6 md:w-auto md:px-7 md:py-4 md:text-[0.64rem]">
+                <button className="pill-button utility-mono mt-5 w-full text-[0.62rem] md:mt-6 md:w-auto md:text-[0.64rem]">
                   Learn More
                 </button>
               </div>
@@ -183,7 +190,7 @@ export default function Home() {
               ]}
             />
             <NewsletterSignup />
-            <div id="course" className="mt-10 border-t border-[var(--brand-ink)]/20 pt-8">
+            <div id="course" className="mt-10 border-t border-[var(--border-subtle)] pt-8">
               <p className="kicker">Course</p>
               <h3 className="editorial-display mt-3 text-3xl text-[var(--brand-deep)] md:text-4xl">
                 A structured learning experience for building your brand world.
@@ -201,8 +208,8 @@ export default function Home() {
         </SectionShell>
 
         <footer id="contact" className="section-shell flex items-center justify-between py-10 text-sm text-[var(--brand-olive)]">
-          <p>© FIOS Studio</p>
-          <p className="utility-mono text-[0.62rem]">Editorial Hybrid</p>
+          <p className="text-[var(--brand-ink)]/80">© FIOS Studio</p>
+          <p className="utility-mono text-[0.62rem] text-[var(--brand-ink)]/60">Editorial Hybrid</p>
         </footer>
       </div>
     </main>

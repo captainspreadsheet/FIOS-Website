@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const links = [
   { href: "/", label: "Home" },
@@ -10,15 +13,25 @@ const links = [
 ];
 
 export function SiteHeader() {
+  const pathname = usePathname();
+
   return (
-    <header className="sticky top-0 z-40 border-b border-[var(--brand-ink)]/15 bg-[var(--brand-cream)]/90 backdrop-blur">
-      <div className="mx-auto flex w-full max-w-[1500px] items-center justify-between px-6 py-4 md:px-10 lg:px-14">
+    <header className="sticky top-0 z-40 border-b border-[var(--border-subtle)] bg-[var(--brand-cream)]/92 backdrop-blur">
+      <div className="mx-auto flex w-full max-w-[var(--container-max)] items-center justify-between px-5 py-4 md:px-8 lg:px-10">
         <Link href="/" className="utility-mono text-[0.66rem] text-[var(--brand-ink)]">
           FIOS STUDIO
         </Link>
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className="hidden items-center gap-6 md:flex" aria-label="Primary">
           {links.map((link) => (
-            <Link key={link.href} href={link.href} className="utility-mono text-[0.62rem] text-[var(--brand-ink)]/75">
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`utility-mono border-b pb-1 text-[0.62rem] transition ${
+                pathname === link.href
+                  ? "border-[var(--brand-deep)] text-[var(--brand-deep)]"
+                  : "border-transparent text-[var(--brand-ink)]/78 hover:text-[var(--brand-ink)]"
+              }`}
+            >
               {link.label}
             </Link>
           ))}

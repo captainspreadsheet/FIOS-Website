@@ -18,19 +18,19 @@ const services = [
 export default function ServicesPage() {
   return (
     <main className="min-h-screen">
-      <div className="mx-auto w-full max-w-[1500px] px-6 md:px-10 lg:px-14">
+      <div className="mx-auto w-full max-w-[var(--container-max)] px-5 md:px-8 lg:px-10">
         <SectionShell>
           <p className="kicker mb-6">Services</p>
           <h1 className="editorial-display max-w-4xl text-4xl leading-tight md:text-6xl">
             Structured creative services for brands that want resonance, not noise.
           </h1>
-          <div className="mt-12 divide-y divide-[var(--brand-ink)]/20">
+          <div className="mt-12 divide-y divide-[var(--border-subtle)]">
             {services.map((service) => (
               <details key={service.title} className="group py-6">
                 <summary className="flex cursor-pointer list-none items-center justify-between text-2xl">
                   {service.title}
-                  <span className="utility-mono text-[0.62rem] text-[var(--brand-olive)] group-open:hidden">Reveal</span>
-                  <span className="utility-mono hidden text-[0.62rem] text-[var(--brand-olive)] group-open:block">Close</span>
+                  <span className="utility-mono text-[0.62rem] text-[var(--brand-ink)]/68 group-open:hidden">Reveal</span>
+                  <span className="utility-mono hidden text-[0.62rem] text-[var(--brand-ink)]/68 group-open:block">Close</span>
                 </summary>
                 <p className="mt-4 max-w-3xl text-[var(--brand-deep)]/85">{service.description}</p>
               </details>
